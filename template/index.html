@@ -1,0 +1,29 @@
+🎓 NYSC Camp Experiences
+Share your memorable moments from NYSC camp!
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+{{ message }}
+{% endfor %} {% endif %} {% endwith %}
+Share Your Experience
+Your Name: 
+Enter your full name
+Your NYSC Camp Experience: 
+Share your story, memories, challenges, or funny moments...
+Upload a Photo (Optional): No file chosen Accepted formats: JPG, PNG, GIF (Max 16MB)
+Submit Experience
+Shared Experiences ({{ experiences|length }})
+{% if experiences %}
+{% for exp in experiences %}
+{% if exp['image_path'] %}
+{{ exp['name'] }}'s photo
+{% endif %}
+{{ exp['name'] }}
+{{ exp['experience'] }}
+
+{{ exp['created_at'] }} Delete
+{% endfor %}
+{% else %}
+No experiences shared yet. Be the first to share your NYSC camp story!
+
+{% endif %}
+NYSC Camp Experiences © 2025
